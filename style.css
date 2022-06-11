@@ -7,44 +7,78 @@ h1 {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   text-align: center;
-  margin: 2rem 0 4rem 0;
+  margin: 2rem 0 8rem 0;
 }
 
-.season-container {
+.season-container-left,
+.season-container-right {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   margin-bottom: 5rem;
   height: 200px;
+  margin: 0 3rem 6rem 3rem;
 }
 
-.season-container > p {
+.season-container-left > p,
+.season-container-right > p {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-align: center;
   margin: 0 1rem 0 1rem;
   font-size: 2rem;
+  /* border: 1px solid black; */
+  transition: font-size 0.5s;
 }
 
-.season-container > img {
-  margin: 0 2rem 0 2rem;
+.season-container-left > img {
   border-radius: 0.4rem;
   opacity: 0.5;
   transition: opacity 1s;
-  width: 40%;
+  width: 30%;
+  margin-right: auto;
+  margin-left: 3rem;
+  transition: width 0.5s;
 }
 
-.season-container > img:hover {
+.season-container-right > img {
+  border-radius: 0.4rem;
+  opacity: 0.5;
+  transition: opacity 1s;
+  width: 30%;
+  margin-left: auto;
+  margin-right: 3rem;
+  transition: width 0.5s;
+}
+
+.season-container-left > img:hover,
+.season-container-right > img:hover {
   opacity: 1;
 }
 
-@media screen and (min-width: 1400px) {
-  .season-container {
-    height: 400px;
+@media screen and (min-width: 1500px) {
+  .season-container-left > img,
+  .season-container-right > img {
+    width: 25%;
+  }
+  .season-container-left > img {
+    margin-right: 14rem;
+  }
+  .season-container-right > img {
+    margin-left: 14rem;
   }
 }
 
-@media screen and (max-width: 750px) {
-  .season-container > p {
+@media screen and (max-width: 900px) {
+  .season-container-left > p,
+  .season-container-right > p {
     font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .season-container-left > p,
+  .season-container-right > p {
+    font-size: 1rem;
   }
 }
